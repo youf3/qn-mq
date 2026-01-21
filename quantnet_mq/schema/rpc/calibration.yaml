@@ -71,6 +71,120 @@ components:
       payload:
         "$ref": "#/components/schemas/CleanUpResponse"
   schemas:
+    Submit:
+      title: submit
+      type: object
+      required:
+      - cmd      
+      - agentId
+      - payload      
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+          - type
+          - exp_id
+          - timeslotBase
+          - allocations
+          properties:
+            type:
+              type: string
+              # - $ref: "#/components/schemas/Parameter"
+            exp_id:
+              type: string
+            timeslotBase:
+              type: number
+            allocations:
+              type: array
+              items:
+                type: object
+                required:
+                - expName
+                - parameters
+                - timeSlot
+                properties:
+                  expName:
+                    type: string
+                  parameters:
+                    type: array
+                    items:
+                      $ref: "qn-schema:objects/objects.yaml#/components/schemas/Parameter"
+                  timeSlot:
+                    type: array
+                    items:
+                      type: integer
+    SubmitResponse:
+      title: submitResponse
+      type: object
+      required:
+      - status
+      - expid
+      properties:
+        status:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Status"
+        expid:
+          type: string
+    GetResult:
+      title: getResult
+      type: object
+      required:
+      - cmd      
+      - agentId
+      - payload   
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+          - expid
+          properties:
+            expid:
+              type: string
+    GetResultResponse:
+      title: getResultResponse
+      type: object
+      required:
+      - status
+      - result
+      properties:
+        status:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Status"
+        result:
+          type: object
+    Cancel:
+      title: cancel
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+            - exp_id
+          properties:
+            exp_id:
+              type: string
+    CancelResponse:
+      title: cancelResponse
+      type: object
+      required:
+      - status      
+      properties:
+        status:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Status"        
     SrcInit:
       title: srcInit
       type: object

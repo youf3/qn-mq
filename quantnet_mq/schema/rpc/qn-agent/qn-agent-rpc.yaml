@@ -1,0 +1,69 @@
+# vim: set ts=2 sw=2 sts=2 expandtab :
+---
+asyncapi: "2.6.0"
+id: "urn:gov:quant-net"
+info:
+  description: "Quant-Net Server RPC Registration Handler"
+  title: "RPC Register Endpoint"
+  version: "1.0.0"
+channels: {}
+components:
+  messages:
+    SubmitMessage:
+      name: agentSubmitMessage
+      messageId: "agentSubmit.message"
+      payload:
+        $ref: "#/components/schemas/Submit"
+    SubmitResponseMessage:
+      name: agentSubmitResponseMessage
+      messageId: "agentSubmit.response.message"
+      payload:
+        $ref: "#/components/schemas/SubmitResponse"
+  schemas:
+    Submit:
+      title: agentSubmit
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+            - device
+            - function            
+          properties:
+            device:
+              type: string
+            function:
+              type: object
+              required:
+                - name
+                - parameters
+              properties:
+                name:
+                  type: string
+                parameters:
+                  type: object
+                  additionalProperties: true
+    SubmitResponse:
+      title:  agentSubmitResponse
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Status"    
+        message:
+          oneOf:
+          - type: string
+          - type: integer
+          - type: number
+          - type: object
+          additionalProperties: true          
+defaultContentType: application/json

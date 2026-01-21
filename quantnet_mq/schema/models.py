@@ -13,7 +13,8 @@ module_path = os.path.dirname(quantnet_mq.__file__)
 
 object_dir = os.path.join(module_path, "schema/objects")
 core_dir = os.path.join(module_path, "schema/rpc/core")
-qnrpc_dir = os.path.join(module_path, "schema/rpc/qn-server")
+qnrpc_server_dir = os.path.join(module_path, "schema/rpc/qn-server")
+qnrpc_agent_dir = os.path.join(module_path, "schema/rpc/qn-agent")
 schema_dirs = [
     os.path.join(module_path, "schema/rpc"),
     os.path.join(module_path, "schema/messages")
@@ -145,5 +146,6 @@ class Schema:
 
 Schema.load_schema(object_dir, ns="default")
 Schema.load_schema(core_dir, ns="default")
-Schema.load_schema(qnrpc_dir, ns="default")
+Schema.load_schema(qnrpc_server_dir, ns="default")
+Schema.load_schema(qnrpc_agent_dir, ns="default")
 Schema.load_schema(schema_dirs)
