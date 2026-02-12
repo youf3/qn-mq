@@ -163,6 +163,8 @@ components:
           $ref: "qn-schema:objects/objects.yaml#/components/schemas/Scalar"
         power:
           type: number
+        length:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Scalar"
         neighbor:
           $ref: "qn-schema:objects/objects.yaml#/components/schemas/Neighbor"
     Neighbor:
