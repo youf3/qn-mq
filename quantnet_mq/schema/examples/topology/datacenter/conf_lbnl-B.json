@@ -1,0 +1,321 @@
+{
+    "systemSettings": {
+        "type": "QNode",
+        "name": "q-node-B.lbl.gov",
+        "ID": "LBNL-B",
+        "controlInterface": "10.0.0.11",
+        "mode": "daemon",
+        "threads": 3,
+        "workers": 3
+    },
+    "qubitSettings": {
+        "qubits": [
+            {
+                "ID": "1",
+                "quantumObject": "nv_center",
+                "T1": {
+                    "value": 1.0,
+                    "unit": "s"
+                },
+                "T2": {
+                    "value": 0.5,
+                    "unit": "s"
+                },
+                "type": "communication"
+            },
+            {
+                "ID": "2",
+                "quantumObject": "nv_center",
+                "T1": {
+                    "value": 2.0,
+                    "unit": "s"
+                },
+                "T2": {
+                    "value": 1.5,
+                    "unit": "s"
+                },
+                "type": "data"
+            }
+        ],
+        "operations": {
+            "oneQubitGates": [
+                {
+                    "gate": "rot_x",
+                    "qubits": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "twoQubitGates": [
+                {
+                    "gate": "cnot",
+                    "qubits": [
+                        [
+                            "1",
+                            "2"
+                        ]
+                    ]
+                }
+            ]
+        }
+    },
+    "matterLightInterfaceSettings": [
+        {
+            "ID": "1",
+            "name": "Interface 1",
+            "entanglement": {
+                "type": "∣Φ+⟩",
+                "rate": {
+                    "value": 1000,
+                    "unit": "Hz"
+                }
+            },
+            "flyingQubit": {
+                "type": "polarization",
+                "wavelength": {
+                    "value": 1550,
+                    "unit": "nm"
+                }
+            }
+        }
+    ],
+    "channels": [
+        {
+            "ID": "1",
+            "name": "to_A",
+            "type": "classic_clk",
+            "direction": "out",
+            "wavelength": {
+                "value": 1550,
+                "unit": "nm"
+            },
+            "power": 10.0,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "LBNL-A",
+                "channelRef": "2",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                }
+            }
+        },
+        {
+            "ID": "2",
+            "name": "from_A",
+            "type": "classic_clk",
+            "direction": "in",
+            "wavelength": {
+                "value": 1550,
+                "unit": "nm"
+            },
+            "power": 10.0,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "LBNL-A",
+                "channelRef": "1",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                }
+            }
+        },
+        {
+            "ID": "3",
+            "name": "to_C",
+            "type": "classic_clk",
+            "direction": "out",
+            "wavelength": {
+                "value": 1550,
+                "unit": "nm"
+            },
+            "power": 10.0,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "LBNL-C",
+                "channelRef": "4",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                }
+            }
+        },
+        {
+            "ID": "4",
+            "name": "from_C",
+            "type": "classic_clk",
+            "direction": "in",
+            "wavelength": {
+                "value": 1550,
+                "unit": "nm"
+            },
+            "power": 10.0,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "LBNL-C",
+                "channelRef": "3",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                }
+            }
+        },
+        {
+            "ID": "5",
+            "name": "to_BSM-AB",
+            "type": "quantum",
+            "direction": "out",
+            "wavelength": {
+                "value": 1550,
+                "unit": "nm"
+            },
+            "power": -3.0,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "BSM-AB",
+                "channelRef": "2",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                },
+                "type": "BSMNode"
+            }
+        },
+        {
+            "ID": "6",
+            "name": "to_BSM-BC",
+            "type": "quantum",
+            "direction": "out",
+            "wavelength": {
+                "value": 1550,
+                "unit": "nm"
+            },
+            "power": -3.0,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "BSM-BC",
+                "channelRef": "1",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                },
+                "type": "BSMNode"
+            }
+        },
+        {
+            "ID": "7",
+            "name": "result_from_BSM-AB",
+            "type": "classic_bsm_result",
+            "direction": "in",
+            "wavelength": {
+                "value": 1310,
+                "unit": "nm"
+            },
+            "power": 1.4,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "BSM-AB",
+                "channelRef": "4",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                },
+                "type": "BSMNode"
+            }
+        },
+        {
+            "ID": "8",
+            "name": "result_from_BSM-BC",
+            "type": "classic_bsm_result",
+            "direction": "in",
+            "wavelength": {
+                "value": 1310,
+                "unit": "nm"
+            },
+            "power": 1.4,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "BSM-BC",
+                "channelRef": "3",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                },
+                "type": "BSMNode"
+            }
+        },
+        {
+            "ID": "9",
+            "name": "clk_from_BSM-AB",
+            "type": "classic_clk",
+            "direction": "in",
+            "wavelength": {
+                "value": 1310,
+                "unit": "nm"
+            },
+            "power": 1.4,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "BSM-AB",
+                "channelRef": "6",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                },
+                "type": "BSMNode"
+            }
+        },
+        {
+            "ID": "10",
+            "name": "clk_from_BSM-BC",
+            "type": "classic_clk",
+            "direction": "in",
+            "wavelength": {
+                "value": 1310,
+                "unit": "nm"
+            },
+            "power": 1.4,
+            "length": {
+                "value": 1,
+                "unit": "km"
+            },
+            "neighbor": {
+                "systemRef": "BSM-BC",
+                "channelRef": "5",
+                "loss": {
+                    "value": 5,
+                    "unit": "dB"
+                },
+                "type": "BSMNode"
+            }
+        }
+    ]
+}
