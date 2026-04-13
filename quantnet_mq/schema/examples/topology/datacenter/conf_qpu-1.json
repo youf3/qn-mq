@@ -1,0 +1,406 @@
+{
+  "systemSettings": {
+    "type": "QNode",
+    "name": "qpu-1.lbl.gov",
+    "ID": "QPU-1",
+    "controlInterface": "10.0.0.10",
+    "mode": "daemon",
+    "threads": 3,
+    "workers": 3
+  },
+  "qubitSettings": {
+    "qubits": [
+      {
+        "ID": "1",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "2",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "3",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "4",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "5",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "6",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "7",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "8",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "9",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "10",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 1.0, "unit": "s" },
+        "T2": { "value": 0.5, "unit": "s" },
+        "type": "communication"
+      },
+      {
+        "ID": "11",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "12",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "13",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "14",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "15",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "16",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "17",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "18",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "19",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "20",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "21",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "22",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "23",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "24",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "25",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "26",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "27",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "28",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "29",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      },
+      {
+        "ID": "30",
+        "quantumObject": "trapped_ion",
+        "T1": { "value": 2.0, "unit": "s" },
+        "T2": { "value": 1.5, "unit": "s" },
+        "type": "data"
+      }
+    ],
+    "operations": {
+      "oneQubitGates": [
+        {
+          "gate": "rot_x",
+          "qubits": ["1","2","3","4","5","6","7","8","9","10",
+                     "11","12","13","14","15","16","17","18","19","20",
+                     "21","22","23","24","25","26","27","28","29","30"]
+        }
+      ],
+      "twoQubitGates": [
+        {
+          "gate": "cnot",
+          "qubits": [
+            ["1","11"],["2","12"],["3","13"],["4","14"],["5","15"],
+            ["6","16"],["7","17"],["8","18"],["9","19"],["10","20"]
+          ]
+        }
+      ]
+    }
+  },
+  "matterLightInterfaceSettings": [
+    {
+      "ID": "1",
+      "name": "Interface 1",
+      "entanglement": {
+        "type": "∣Φ+⟩",
+        "rate": { "value": 1000, "unit": "Hz" }
+      },
+      "flyingQubit": {
+        "type": "polarization",
+        "wavelength": { "value": 1550, "unit": "nm" }
+      }
+    }
+  ],
+  "channels": [
+    {
+      "ID": "1",
+      "name": "to_QPU-2",
+      "type": "classic_clk",
+      "direction": "out",
+      "wavelength": { "value": 1550, "unit": "nm" },
+      "power": 10.0,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "QPU-2",
+        "channelRef": "2",
+        "loss": { "value": 5, "unit": "dB" }
+      }
+    },
+    {
+      "ID": "2",
+      "name": "from_QPU-2",
+      "type": "classic_clk",
+      "direction": "in",
+      "wavelength": { "value": 1550, "unit": "nm" },
+      "power": 10.0,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "QPU-2",
+        "channelRef": "1",
+        "loss": { "value": 5, "unit": "dB" }
+      }
+    },
+    {
+      "ID": "3",
+      "name": "to_QPU-3",
+      "type": "classic_clk",
+      "direction": "out",
+      "wavelength": { "value": 1550, "unit": "nm" },
+      "power": 10.0,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "QPU-3",
+        "channelRef": "2",
+        "loss": { "value": 5, "unit": "dB" }
+      }
+    },
+    {
+      "ID": "4",
+      "name": "from_QPU-3",
+      "type": "classic_clk",
+      "direction": "in",
+      "wavelength": { "value": 1550, "unit": "nm" },
+      "power": 10.0,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "QPU-3",
+        "channelRef": "1",
+        "loss": { "value": 5, "unit": "dB" }
+      }
+    },
+    {
+      "ID": "5",
+      "name": "to_BSM-1_2",
+      "type": "quantum",
+      "direction": "out",
+      "wavelength": { "value": 1550, "unit": "nm" },
+      "power": -3.0,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "BSM-1_2",
+        "channelRef": "1",
+        "loss": { "value": 5, "unit": "dB" },
+        "type": "BSMNode"
+      }
+    },
+    {
+      "ID": "6",
+      "name": "to_BSM-1_3",
+      "type": "quantum",
+      "direction": "out",
+      "wavelength": { "value": 1550, "unit": "nm" },
+      "power": -3.0,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "BSM-1_3",
+        "channelRef": "2",
+        "loss": { "value": 5, "unit": "dB" },
+        "type": "BSMNode"
+      }
+    },
+    {
+      "ID": "7",
+      "name": "result_from_BSM-1_2",
+      "type": "classic_bsm_result",
+      "direction": "in",
+      "wavelength": { "value": 1310, "unit": "nm" },
+      "power": 1.4,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "BSM-1_2",
+        "channelRef": "3",
+        "loss": { "value": 5, "unit": "dB" },
+        "type": "BSMNode"
+      }
+    },
+    {
+      "ID": "8",
+      "name": "result_from_BSM-1_3",
+      "type": "classic_bsm_result",
+      "direction": "in",
+      "wavelength": { "value": 1310, "unit": "nm" },
+      "power": 1.4,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "BSM-1_3",
+        "channelRef": "4",
+        "loss": { "value": 5, "unit": "dB" },
+        "type": "BSMNode"
+      }
+    },
+    {
+      "ID": "9",
+      "name": "clk_from_BSM-1_2",
+      "type": "classic_clk",
+      "direction": "in",
+      "wavelength": { "value": 1310, "unit": "nm" },
+      "power": 1.4,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "BSM-1_2",
+        "channelRef": "5",
+        "loss": { "value": 5, "unit": "dB" },
+        "type": "BSMNode"
+      }
+    },
+    {
+      "ID": "10",
+      "name": "clk_from_BSM-1_3",
+      "type": "classic_clk",
+      "direction": "in",
+      "wavelength": { "value": 1310, "unit": "nm" },
+      "power": 1.4,
+      "length": { "value": 1, "unit": "km" },
+      "neighbor": {
+        "systemRef": "BSM-1_3",
+        "channelRef": "6",
+        "loss": { "value": 5, "unit": "dB" },
+        "type": "BSMNode"
+      }
+    }
+  ]
+}
