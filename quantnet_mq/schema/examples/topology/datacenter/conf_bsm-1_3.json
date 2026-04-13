@@ -1,0 +1,125 @@
+{
+    "systemSettings": {
+        "type": "BSMNode",
+        "name": "bsm-1_3.lbl.gov",
+        "ID": "BSM-1_3",
+        "controlInterface": "10.0.0.22",
+        "mode": "daemon",
+        "threads": 5,
+        "workers": 5
+    },
+    "quantumSettings": {
+        "bellStates": [
+            "∣Φ+⟩",
+            "∣Φ−⟩",
+            "∣Ψ+⟩",
+            "∣Ψ−⟩"
+        ],
+        "measurementRate": 1000,
+        "qubitEncoding": "polarization",
+        "detectorSettings": [
+            {
+                "name": "detector_1",
+                "efficiency": "0.99",
+                "darkCount": "1",
+                "countRate": { "value": 1000, "unit": "Hz" },
+                "timeResolution": { "value": 100, "unit": "ns" }
+            },
+            {
+                "name": "detector_2",
+                "efficiency": "0.99",
+                "darkCount": "1",
+                "countRate": { "value": 1000, "unit": "Hz" },
+                "timeResolution": { "value": 100, "unit": "ns" }
+            }
+        ]
+    },
+    "channels": [
+        {
+            "ID": "1",
+            "name": "from_QPU-3",
+            "type": "quantum",
+            "direction": "in",
+            "wavelength": { "value": 1550, "unit": "nm" },
+            "power": -3.0,
+            "neighbor": {
+                "systemRef": "QPU-3",
+                "channelRef": "6",
+                "type": "QNode"
+            }
+        },
+        {
+            "ID": "2",
+            "name": "from_QPU-1",
+            "type": "quantum",
+            "direction": "in",
+            "wavelength": { "value": 1550, "unit": "nm" },
+            "power": -3.0,
+            "neighbor": {
+                "systemRef": "QPU-1",
+                "channelRef": "6",
+                "type": "QNode"
+            }
+        },
+        {
+            "ID": "3",
+            "name": "result_to_QPU-3",
+            "type": "classic_bsm_result",
+            "direction": "out",
+            "wavelength": { "value": 1310, "unit": "nm" },
+            "power": 1.4,
+            "length": { "value": 1, "unit": "km" },
+            "neighbor": {
+                "systemRef": "QPU-3",
+                "channelRef": "8",
+                "loss": { "value": 5, "unit": "dB" },
+                "type": "QNode"
+            }
+        },
+        {
+            "ID": "4",
+            "name": "result_to_QPU-1",
+            "type": "classic_bsm_result",
+            "direction": "out",
+            "wavelength": { "value": 1310, "unit": "nm" },
+            "power": 1.4,
+            "length": { "value": 1, "unit": "km" },
+            "neighbor": {
+                "systemRef": "QPU-1",
+                "channelRef": "8",
+                "loss": { "value": 5, "unit": "dB" },
+                "type": "QNode"
+            }
+        },
+        {
+            "ID": "5",
+            "name": "clk_to_QPU-3",
+            "type": "classic_clk",
+            "direction": "out",
+            "wavelength": { "value": 1310, "unit": "nm" },
+            "power": 1.4,
+            "length": { "value": 1, "unit": "km" },
+            "neighbor": {
+                "systemRef": "QPU-3",
+                "channelRef": "10",
+                "loss": { "value": 5, "unit": "dB" },
+                "type": "QNode"
+            }
+        },
+        {
+            "ID": "6",
+            "name": "clk_to_QPU-1",
+            "type": "classic_clk",
+            "direction": "out",
+            "wavelength": { "value": 1310, "unit": "nm" },
+            "power": 1.4,
+            "length": { "value": 1, "unit": "km" },
+            "neighbor": {
+                "systemRef": "QPU-1",
+                "channelRef": "10",
+                "loss": { "value": 5, "unit": "dB" },
+                "type": "QNode"
+            }
+        }
+    ]
+}
