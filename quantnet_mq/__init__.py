@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from enum import IntEnum, StrEnum
+from enum import Enum, IntEnum
 
 __version__ = "1.0.0"
 
@@ -39,7 +39,7 @@ class Code(IntEnum):
     QUEUED = 7
 
 
-class EventType(StrEnum):
+class EventType(str, Enum):
     """
     Reference: schema/messages/monitor.yaml
     """
