@@ -99,12 +99,15 @@ class RPCClient:
     def _add_subscription(self, queue, qos):
         self._subscriptions[queue] = qos
 
-    def _stop_mqttclient(self):
-        if not self._sync and self._resp_task:
-            self._resp_task_exit = True
-            self._resp_task.join(2*self._resp_timeout)
-            logger.info(f"Stopped response thread")
-        pass
+    async def _stop_mqttclient(self):
+        if self._mqttclient:
+            try:
+                await asyncio.wait_for(self._mqttclient.disconnect(), timeout=3.0)
+            except asyncio.TimeoutError:
+                logger.warning("MQTT disconnect timed out after 3s, forcing shutdown")
+            except Exception as e:
+                logger.warning("MQTT disconnect error: %s", e)
+            logger.info("Stopped MQTT client")
 
     async def call(self, target, msg, timeout=5.0, verbose=None, topic=None, model="quantnet_mq.schema.models", sync=True):
         if topic is None:
