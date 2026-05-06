@@ -35,6 +35,7 @@ components:
             - agentHeartbeat
             - agentTaskSchedulerPhase
             - agentTaskSchedulerTask
+            - agentTaskResult
         value:
           oneOf:
           - type: string

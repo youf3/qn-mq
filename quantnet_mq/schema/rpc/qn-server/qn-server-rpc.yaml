@@ -50,6 +50,16 @@ components:
       messageId: "agentExperiment.response.message"
       payload:
         $ref: "#/components/schemas/ExperimentResponse"
+    MonitorTaskMessage:
+      name: agentMonitorTaskMessage
+      messageId: "agentMonitorTask.message"
+      payload:
+        $ref: "#/components/schemas/MonitorTask"
+    MonitorTaskResponseMessage:
+      name: agentMonitorTaskResponseMessage
+      messageId: "agentMonitorTask.response.message"
+      payload:
+        $ref: "#/components/schemas/MonitorTaskResponse"
   schemas:
     Register:
       title: agentRegister
@@ -270,4 +280,34 @@ components:
       properties:
         status:
           $ref: "qn-schema:objects/objects.yaml#/components/schemas/Status"    
+    MonitorTask:
+      title: agentMonitorTask
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          properties:
+            agent_id:
+              type: string
+    MonitorTaskResponse:
+      title: agentMonitorTaskResponse
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Status"
+        tasks:
+          type: array
+          minItems: 0
+          items:
+            type: object
 defaultContentType: application/json

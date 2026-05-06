@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from enum import IntEnum
+from enum import Enum, IntEnum
 
 __version__ = "1.0.0"
 
@@ -37,3 +37,15 @@ class Code(IntEnum):
     ALREADY_EXISTS = 5
     FAILED = 6
     QUEUED = 7
+
+
+class EventType(str, Enum):
+    """
+    Reference: schema/messages/monitor.yaml
+    """
+    AGENT_STATE = "agentState"
+    EXPERIMENT_RESULT = "experimentResult"
+    AGENT_HEARTBEAT = "agentHeartbeat"
+    AGENT_TASK_SCHEDULER_PHASE = "agentTaskSchedulerPhase"
+    AGENT_TASK_SCHEDULER_TASK = "agentTaskSchedulerTask"
+    AGENT_TASK_RESULT = "agentTaskResult"
