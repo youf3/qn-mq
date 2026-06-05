@@ -68,10 +68,10 @@ class RPCClient:
             return
 
         if fut is not None:
-            try:
+            if not fut.done():
                 fut.set_result(body)
-            except Exception as e:
-                raise Exception(f"Failed to set future result:{e}")
+            else:
+                logger.debug("Received late response for already-completed future (corrid=%s), discarding", corrid)
 
         return PubRecReasonCode.SUCCESS
 
