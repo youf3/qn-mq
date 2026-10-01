@@ -36,6 +36,7 @@ components:
             - agentTaskSchedulerPhase
             - agentTaskSchedulerTask
             - agentTaskResult
+            - linkStateUpdate
         value:
           oneOf:
           - type: string
