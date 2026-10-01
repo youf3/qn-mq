@@ -1,0 +1,204 @@
+---
+asyncapi: "2.6.0"
+id: "urn:gov:quant-net"
+info:
+  description: "Quant-Net Link Adjacency Protocol RPC Schemas"
+  title: "Link Adjacency RPC Endpoint"
+  version: "1.0.0"
+channels:
+  rpc/link/.agent-id:
+    subscribe:
+      operationId: "link"
+      x-function-name: sub
+      message:
+        $ref: "#/components/messages/LinkHelloMessage"
+  rpc-res/link/.server-id:
+    publish:
+      operationId: link.response
+      x-function-name: pub
+      message:
+        $ref: "#/components/messages/LinkHelloResponseMessage"
+components:
+  messages:
+    LinkHelloMessage:
+      name: LinkHelloMessage
+      messageId: link.hello.message
+      payload:
+        "$ref": "#/components/schemas/LinkHello"
+    LinkHelloResponseMessage:
+      name: LinkHelloResponseMessage
+      messageId: link.hello.response.message
+      payload:
+        "$ref": "#/components/schemas/LinkHelloResponse"
+    LinkProbeMessage:
+      name: LinkProbeMessage
+      messageId: link.probe.message
+      payload:
+        "$ref": "#/components/schemas/LinkProbe"
+    LinkProbeResponseMessage:
+      name: LinkProbeResponseMessage
+      messageId: link.probe.response.message
+      payload:
+        "$ref": "#/components/schemas/LinkProbeResponse"
+    LinkSwitchPortCheckMessage:
+      name: LinkSwitchPortCheckMessage
+      messageId: link.switchPortCheck.message
+      payload:
+        "$ref": "#/components/schemas/LinkSwitchPortCheck"
+    LinkSwitchPortCheckResponseMessage:
+      name: LinkSwitchPortCheckResponseMessage
+      messageId: link.switchPortCheck.response.message
+      payload:
+        "$ref": "#/components/schemas/LinkSwitchPortCheckResponse"
+    LinkStateUpdateMessage:
+      name: LinkStateUpdateMessage
+      messageId: link.stateUpdate.message
+      payload:
+        "$ref": "#/components/schemas/LinkStateUpdate"
+  schemas:
+    LinkHello:
+      title: linkHello
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+            - src_cid
+            - dst_cid
+            - channel_id
+            - neighbor_channel_id
+            - seen_neighbors
+            - hello_interval
+            - hold_time
+            - timestamp
+          properties:
+            src_cid:
+              type: string
+            dst_cid:
+              type: string
+            channel_id:
+              type: string
+            neighbor_channel_id:
+              type: string
+            seen_neighbors:
+              type: array
+              items:
+                type: string
+            hello_interval:
+              type: integer
+            hold_time:
+              type: integer
+            timestamp:
+              type: string
+    LinkHelloResponse:
+      title: linkHelloResponse
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+    LinkProbe:
+      title: linkProbe
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+            - src_cid
+            - dst_cid
+            - channel_id
+            - probe_id
+          properties:
+            src_cid:
+              type: string
+            dst_cid:
+              type: string
+            channel_id:
+              type: string
+            probe_id:
+              type: string
+    LinkProbeResponse:
+      title: linkProbeResponse
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+    LinkSwitchPortCheck:
+      title: linkSwitchPortCheck
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+            - src_channel
+            - dst_channel
+          properties:
+            src_channel:
+              type: string
+            dst_channel:
+              type: string
+    LinkSwitchPortCheckResponse:
+      title: linkSwitchPortCheckResponse
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum:
+            - ok
+            - port_down
+            - not_routed
+    LinkStateUpdate:
+      title: linkStateUpdate
+      type: object
+      required:
+        - eventType
+        - src_cid
+        - dst_cid
+        - state
+        - timestamp
+      properties:
+        eventType:
+          type: string
+        src_cid:
+          type: string
+        dst_cid:
+          type: string
+        state:
+          type: string
+          enum:
+            - DOWN
+            - INIT
+            - CONTROL_UP
+            - QUANTUM_UP
+        timestamp:
+          type: string
+defaultContentType: application/json
