@@ -272,6 +272,8 @@ components:
                   minItems: 0
                   items:
                     $ref: "qn-schema:objects/objects.yaml#/components/schemas/Parameter"
+                owner:
+                  type: string
     ExperimentResponse:
       title:  agentExperimentResponse
       type: object
