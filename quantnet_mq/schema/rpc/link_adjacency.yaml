@@ -55,6 +55,16 @@ components:
       messageId: link.stateUpdate.message
       payload:
         "$ref": "#/components/schemas/LinkStateUpdate"
+    LinkControlMessage:
+      name: LinkControlMessage
+      messageId: link.control.message
+      payload:
+        "$ref": "#/components/schemas/LinkControl"
+    LinkControlResponseMessage:
+      name: LinkControlResponseMessage
+      messageId: link.control.response.message
+      payload:
+        "$ref": "#/components/schemas/LinkControlResponse"
   schemas:
     LinkHello:
       title: linkHello
@@ -201,4 +211,47 @@ components:
             - QUANTUM_UP
         timestamp:
           type: string
+    LinkControl:
+      title: linkControl
+      type: object
+      required:
+        - cmd
+        - agentId
+        - payload
+      properties:
+        cmd:
+          type: string
+        agentId:
+          type: string
+        payload:
+          type: object
+          required:
+            - action
+          properties:
+            action:
+              type: string
+              enum:
+                - show
+                - show_detail
+                - connect
+                - disconnect
+                - probe
+                - set
+                - switch_check
+            target:
+              type: string
+            param:
+              type: string
+            value:
+              type: integer
+    LinkControlResponse:
+      title: linkControlResponse
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+        data:
+          type: object
 defaultContentType: application/json

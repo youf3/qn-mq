@@ -181,5 +181,15 @@ class RPCServer:
             raise ValueError
         self._on_rpcmsg_callback = cb
 
+    def subscribe(self, topic: str, qos: int = 2):
+        """Subscribe to an additional MQTT topic on the existing client.
+
+        This allows the same RPC server to handle messages arriving on
+        multiple topic prefixes (e.g. both ``rpc/{cid}`` and ``link/{cid}``).
+        Must be called after :meth:`start`.
+        """
+        if self._mqttclient is not None:
+            self._mqttclient.subscribe(topic, qos)
+
     def set_handler(self, cmd: str, cb, classpath):
         self._rpc_handlers[cmd] = RPCHandler(cmd, cb, classpath)
