@@ -8,6 +8,10 @@
     "threads": 3,
     "workers": 3
   },
+  "capabilities": {
+    "continuous_entanglement": true,
+    "prefill_cost_per_pair": 1
+  },
   "qubitSettings": {
     "qubits": [
       {
