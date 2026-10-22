@@ -42,3 +42,5 @@ components:
           minItems: 1
           items:
             $ref: "qn-schema:objects/objects.yaml#/components/schemas/Channel"
+        capabilities:
+          $ref: "qn-schema:objects/objects.yaml#/components/schemas/Capabilities"

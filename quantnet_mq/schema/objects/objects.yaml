@@ -375,3 +375,11 @@ components:
           minItems: 0
           items:
             type: object
+    Capabilities:
+      title: Capabilities
+      type: object
+      properties:
+        continuous_entanglement:
+          type: boolean
+        prefill_cost_per_pair:
+          type: integer
