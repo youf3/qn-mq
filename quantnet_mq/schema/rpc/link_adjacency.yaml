@@ -108,6 +108,8 @@ components:
               type: integer
             timestamp:
               type: string
+            ready:
+              type: boolean
     LinkHelloResponse:
       title: linkHelloResponse
       type: object
@@ -116,6 +118,8 @@ components:
       properties:
         status:
           type: string
+        ready:
+          type: boolean
     LinkProbe:
       title: linkProbe
       type: object
@@ -152,6 +156,8 @@ components:
       properties:
         status:
           type: string
+        data:
+          type: object
     LinkSwitchPortCheck:
       title: linkSwitchPortCheck
       type: object
