@@ -37,6 +37,7 @@ class Code(IntEnum):
     ALREADY_EXISTS = 5
     FAILED = 6
     QUEUED = 7
+    RUNNING = 8
 
 
 class EventType(str, Enum):

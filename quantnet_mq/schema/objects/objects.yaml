@@ -312,6 +312,7 @@ components:
             - ALREADY_EXISTS
             - FAILED
             - QUEUED
+            - RUNNING
         reason:
           type: string
         message:
